@@ -1,0 +1,31 @@
+@import "variables";
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/grid";
+@import "~bootstrap/scss/utilities"; // add css utilities
+@import "reset";
+
+/* You can add global styles to this file, and also import other style files */
+
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+$mat-blue-ed: ( 50: #e3f2fd, 100: #303b4d, 200: #90caf9, 300: #64b5f6, 400: #42a5f5, 500: #262F3D, 600: #1e88e5, 700: #1e2631, 800: #1565c0, 900: #0d47a1, A100: #82b1ff, A200: #262F3D, A400: #232b38, A700: #1e2631, contrast: ( 50: $dark-primary-text, 100: $dark-primary-text, 200: $dark-primary-text, 300: $dark-primary-text, 400: $dark-primary-text, 500: $light-primary-text, 600: $light-primary-text, 700: $light-primary-text, 800: $light-primary-text, 900: $light-primary-text, A100: $dark-primary-text, A200: $light-primary-text, A400: $light-primary-text, A700: $light-primary-text, ));
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$ed-app-primary: mat-palette($mat-light-blue);
+$ed-app-accent: mat-palette($mat-blue-ed, A200, 100, A700);
+// The warn palette is optional (defaults to red).
+$ed-app-warn: mat-palette($mat-red);
+// Create the theme object (a Sass map containing all of the palettes).
+$ed-app-theme: mat-light-theme($ed-app-primary, $ed-app-accent, $ed-app-warn);
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($ed-app-theme);

@@ -1,0 +1,38 @@
+<ng-container>
+    <div class="mat-elevation-z4">
+        <mat-toolbar color="primary" class="mat-elevation-z4 toolbar">
+            <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="menu.toggle()">
+                        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+                        </button>
+            <img width="50px" src="../../assets/ed-logo.png" />
+        </mat-toolbar>
+    </div>
+
+    <mat-sidenav-container class="menu-container">
+        <mat-sidenav #menu class="menu mat-elevation-z4" mode="side" opened>
+            <mat-nav-list>
+                <mat-list-item routerLink="/DoblePlay" routerLinkActive="menu-item-active">
+                    <mat-icon mat-list-icon>done_all</mat-icon>
+                    <p mat-line> Doble Play </p>
+                </mat-list-item>
+                <mat-list-item routerLink="/Activaciones" routerLinkActive="menu-item-active">
+                    <mat-icon mat-list-icon>queue_play_next</mat-icon>
+                    <p mat-line> Activaciones </p>
+                </mat-list-item>
+                <mat-list-item routerLink="/Activacioness" routerLinkActive="menu-item-active">
+                    <mat-icon mat-list-icon>mail_outline</mat-icon>
+                    <p mat-line> Otro </p>
+                </mat-list-item>
+                <mat-list-item routerLink="/Activacionesd" routerLinkActive="menu-item-active">
+                    <mat-icon mat-list-icon>dialer_sip</mat-icon>
+                    <p mat-line> Dish </p>
+                </mat-list-item>
+            </mat-nav-list>
+        </mat-sidenav>
+        <mat-sidenav-content>
+            <div class="px-3 py-3">
+                <router-outlet></router-outlet>
+            </div>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</ng-container>

@@ -1,0 +1,50 @@
+/********Estilos Creados Por Angular Material******************/
+
+.mat-toolbar {
+    height: 3rem;
+}
+
+.mat-nav-list {
+    padding-top: 0px;
+}
+
+.mat-list-item {
+    color: white;
+    border-bottom: 1px solid var(--border-accent);
+}
+
+.mat-list-item:hover {
+    background: var(--menu-focus-color);
+}
+
+
+/********************************************************************************/
+
+.menu-container {
+    //background-color: #F4F4F4;
+    position: absolute;
+    bottom: 0;
+    top: 3rem;
+    left: 0;
+    right: 0;
+}
+
+.menu {
+    min-width: 250px;
+    background-color: var(--menu-color);
+    top: 0; //position: fixed;
+}
+
+.toolbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.menu-item-active {
+    color: var(--menu-active-color) !important;
+    font-weight: bold !important;
+    //background: var(--menu-focus-color) !important;
+    //background: var(--menu-focus-color) !important;
+}
