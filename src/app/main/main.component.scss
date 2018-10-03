@@ -1,0 +1,64 @@
+.main-container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.main-is-mobile .toolbar {
+    position: fixed;
+    /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+    z-index: 2;
+}
+
+h1.title-app-name {
+    margin-left: 8px;
+    //margin-top: 2px;
+}
+
+.sidenav-container {
+    /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+       causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+    flex: 1;
+}
+
+.main-is-mobile .sidenav-container {
+    /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
+       `<body>` to be our scrolling element for mobile layouts.
+       permite hacer scroll cuando esta en mobile y el menu esta abierto*/
+    flex: 1 0 auto;
+}
+
+.mat-toolbar {
+    height: 3rem;
+}
+
+.mat-list-item {
+    color: white;
+    border-bottom: 1px solid var(--border-accent);
+    background-color: var(--menu-color);
+}
+
+.mat-nav-list {
+    padding-top: 0px;
+}
+
+.mat-list-item:hover {
+    background: var(--menu-focus-color);
+}
+
+.menu {
+    min-width: 250px;
+    background-color: var(--menu-color);
+    //top: 0; //position: fixed;
+}
+
+.menu-item-active {
+    color: var(--menu-active-color) !important;
+    font-weight: bold !important;
+    //background: var(--menu-focus-color) !important;
+    //background: var(--menu-focus-color) !important;
+}
