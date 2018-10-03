@@ -13,14 +13,19 @@ import {
     MatToolbarModule,
     MatListModule,
     MatIconModule,
-    MatCardModule
+    MatCardModule,
+    MatNativeDateModule,
 } from '@angular/material';
+
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
 import { LayoutComponent } from './layout/layout.component';
 import { DobleplayModule } from './dobleplay/dobleplay.module';
 import { ActivacionesModule } from './activaciones/activaciones.module';
 import { FoliosDPComponent } from './dobleplay/components/folios-dp/folios-dp.component';
 import { ActivacionesComponent } from './activaciones/components/activaciones/activaciones.component';
+import { MainComponent } from './main/main.component';
 
 const appRoutes: Routes = [
     { path: 'DoblePlay', component: FoliosDPComponent },
@@ -36,7 +41,8 @@ const appRoutes: Routes = [
 @NgModule({
     declarations: [
         AppComponent,
-        LayoutComponent
+        LayoutComponent,
+        MainComponent
     ],
     imports: [
         BrowserModule,
@@ -54,7 +60,13 @@ const appRoutes: Routes = [
         RouterModule.forRoot(
             appRoutes,
             { enableTracing: false } // <-- debugging purposes only
-        )
+        ),
+        BrowserModule,
+        BrowserAnimationsModule,
+        FormsModule,
+        HttpClientModule,
+        MatNativeDateModule,
+        ReactiveFormsModule,
     ],
     providers: [],
     bootstrap: [AppComponent]
