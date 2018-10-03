@@ -29,3 +29,7 @@ $ed-app-theme: mat-light-theme($ed-app-primary, $ed-app-accent, $ed-app-warn);
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include angular-material-theme($ed-app-theme);
+
+.mat-row:hover{
+    background-color: var(--table-hover-color);
+}

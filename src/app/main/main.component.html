@@ -2,10 +2,10 @@
     <mat-toolbar color="primary" class="toolbar mat-elevation-z4">
         <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
         <img width="50px" src="../../assets/ed-logo.png" />
-        <h1 class="title-app-name">Responsive App</h1>
+        <h1 class="title-app-name">Enlace Digital</h1>
     </mat-toolbar>
     <mat-sidenav-container class="sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 48 : 0">
-        <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches" fixedTopGap="48" class="menu">
+        <mat-sidenav opened #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches" fixedTopGap="48" class="menu">
             <mat-nav-list>
                 <mat-list-item routerLink="/DoblePlay" routerLinkActive="menu-item-active">
                     <mat-icon mat-list-icon>done_all</mat-icon>

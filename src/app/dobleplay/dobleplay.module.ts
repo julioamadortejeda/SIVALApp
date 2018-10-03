@@ -4,7 +4,8 @@ import { FoliosDPComponent } from './components/folios-dp/folios-dp.component';
 import { MatCardModule,
          MatTableModule,
          MatFormFieldModule,
-         MatInputModule } from '@angular/material';
+         MatInputModule,
+         MatPaginatorModule  } from '@angular/material';
 
 @NgModule({
   imports: [
@@ -12,7 +13,8 @@ import { MatCardModule,
     MatCardModule,
     MatTableModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatPaginatorModule
   ],
   exports: [FoliosDPComponent],
   declarations: [FoliosDPComponent]

@@ -32,7 +32,7 @@ const appRoutes: Routes = [
     { path: 'Activaciones', component: ActivacionesComponent },
     {
         path: '',
-        component: ActivacionesComponent,
+        component: FoliosDPComponent,
         pathMatch: 'full'
     },
     { path: '**', component: FoliosDPComponent }
