@@ -33,7 +33,8 @@ h1.title-app-name {
 }
 
 .mat-toolbar {
-    height: 3rem;
+    height: 64px;
+    //height: 3rem;
 }
 
 .mat-list-item {
@@ -61,4 +62,8 @@ h1.title-app-name {
     font-weight: bold !important;
     //background: var(--menu-focus-color) !important;
     //background: var(--menu-focus-color) !important;
+}
+
+.mat-drawer-container {
+    background-color: transparent !important;
 }

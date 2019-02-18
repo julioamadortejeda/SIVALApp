@@ -2,11 +2,15 @@
     <mat-toolbar color="primary" class="toolbar mat-elevation-z4">
         <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
         <img width="50px" src="../../assets/ed-logo.png" />
-        <h1 class="title-app-name">Enlace Digital</h1>
+        <!-- <h1 class="title-app-name">Enlace Digital</h1> -->
     </mat-toolbar>
-    <mat-sidenav-container class="sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 48 : 0">
-        <mat-sidenav opened #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches" fixedTopGap="48" class="menu">
+    <mat-sidenav-container class="sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 64 : 0">
+        <mat-sidenav opened #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches" fixedTopGap="64" class="menu">
             <mat-nav-list>
+                <mat-list-item routerLink="/DoblePlay" routerLinkActive="menu-item-active">
+                    <app-buscarfolio>
+                    </app-buscarfolio>
+                </mat-list-item>
                 <mat-list-item routerLink="/DoblePlay" routerLinkActive="menu-item-active">
                     <mat-icon mat-list-icon>done_all</mat-icon>
                     <p mat-line> Doble Play </p>
@@ -25,10 +29,8 @@
                 </mat-list-item>
             </mat-nav-list>
         </mat-sidenav>
-        <mat-sidenav-content>
-            <div class="px-3 py-3">
-                <router-outlet></router-outlet>
-            </div>
+        <mat-sidenav-content class="px-3 py-3">
+            <router-outlet></router-outlet>
         </mat-sidenav-content>
     </mat-sidenav-container>
 </div>

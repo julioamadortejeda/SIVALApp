@@ -15,6 +15,7 @@ import {
     MatIconModule,
     MatCardModule,
     MatNativeDateModule,
+    MatInputModule,
 } from '@angular/material';
 
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -26,6 +27,7 @@ import { ActivacionesModule } from './activaciones/activaciones.module';
 import { FoliosDPComponent } from './dobleplay/components/folios-dp/folios-dp.component';
 import { ActivacionesComponent } from './activaciones/components/activaciones/activaciones.component';
 import { MainComponent } from './main/main.component';
+import { BuscarfolioComponent } from './buscarfolio/buscarfolio.component';
 
 const appRoutes: Routes = [
     { path: 'DoblePlay', component: FoliosDPComponent },
@@ -42,7 +44,8 @@ const appRoutes: Routes = [
     declarations: [
         AppComponent,
         LayoutComponent,
-        MainComponent
+        MainComponent,
+        BuscarfolioComponent
     ],
     imports: [
         BrowserModule,
@@ -54,6 +57,7 @@ const appRoutes: Routes = [
         MatToolbarModule,
         MatListModule,
         MatIconModule,
+        MatInputModule,
         DobleplayModule,
         MatCardModule,
         ActivacionesModule,
