@@ -33,19 +33,13 @@ h1.title-app-name {
 }
 
 .mat-toolbar {
-    height: 64px;
+    min-height: 70px;
     z-index: 50;
     //height: 3rem;
 }
 
-.mat-list-item {
-    color: black;
-    //border-bottom: 1px solid var(--border-accent);
-    //background-color: var(--menu-color);
-}
-
 .mat-nav-list {
-    padding-top: 30px;
+    padding-top: 3rem;
 }
 
 .mat-list-item:hover {
@@ -56,23 +50,21 @@ h1.title-app-name {
 .menu {
     min-width: 240px;
     height: 100%;
-    //background-color: var(--menu-color);
-    //top: 0; //position: fixed;
 }
 
 .menu-item-active {
-    //color: var(--menu-active-color) !important;
     font-weight: bold !important;
     width: 80%;
     margin: 0 auto;
     border-radius: 10px;
     //background-color: transparent !important;
     //background-color: var(--menu-active-color) !important;
-    //color: white;
-    //background: var(--menu-focus-color) !important;
-    //background: var(--menu-focus-color) !important;
 }
 
 .mat-drawer-container {
+    //background-color: transparent !important;
+}
+
+#mat-item-folio:hover {
     background-color: transparent !important;
 }
