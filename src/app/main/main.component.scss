@@ -34,32 +34,41 @@ h1.title-app-name {
 
 .mat-toolbar {
     height: 64px;
+    z-index: 50;
     //height: 3rem;
 }
 
 .mat-list-item {
-    color: white;
-    border-bottom: 1px solid var(--border-accent);
-    background-color: var(--menu-color);
+    color: black;
+    //border-bottom: 1px solid var(--border-accent);
+    //background-color: var(--menu-color);
 }
 
 .mat-nav-list {
-    padding-top: 0px;
+    padding-top: 30px;
 }
 
 .mat-list-item:hover {
-    background: var(--menu-focus-color);
+    color: var(--menu-active-color) !important;
+    //background: var(--menu-focus-color);
 }
 
 .menu {
-    min-width: 250px;
-    background-color: var(--menu-color);
+    min-width: 240px;
+    height: 100%;
+    //background-color: var(--menu-color);
     //top: 0; //position: fixed;
 }
 
 .menu-item-active {
-    color: var(--menu-active-color) !important;
+    //color: var(--menu-active-color) !important;
     font-weight: bold !important;
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 10px;
+    //background-color: transparent !important;
+    //background-color: var(--menu-active-color) !important;
+    //color: white;
     //background: var(--menu-focus-color) !important;
     //background: var(--menu-focus-color) !important;
 }
