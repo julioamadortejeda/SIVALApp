@@ -1,3 +1,4 @@
+//****************************CSS YA DEFINIFOS POR ANGULAR MATERIAL*************
 .main-container {
     display: flex;
     flex-direction: column;
@@ -14,11 +15,6 @@
     z-index: 2;
 }
 
-h1.title-app-name {
-    margin-left: 8px;
-    //margin-top: 2px;
-}
-
 .sidenav-container {
     /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
        causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
@@ -32,24 +28,31 @@ h1.title-app-name {
     flex: 1 0 auto;
 }
 
-.mat-toolbar {
-    min-height: 70px;
-    z-index: 50;
-    //height: 3rem;
+.mat-drawer-container {
+    //quitar el color por defecto de fondo del container
+    background-color: transparent !important;
 }
 
-.mat-nav-list {
+/********************************FIN*********************************/
+
+
+//***********************ESTILOS MENU LATERAL
+.ed-menu {
+    min-width: 240px;
+    height: 100%;
+    background-color: var(--menu-color) !important;
+}
+
+.ed-menu-list {
     padding-top: 3rem;
+}
+
+.mat-list-item {
+    color: white !important;
 }
 
 .mat-list-item:hover {
     color: var(--menu-active-color) !important;
-    //background: var(--menu-focus-color);
-}
-
-.menu {
-    min-width: 240px;
-    height: 100%;
 }
 
 .menu-item-active {
@@ -57,14 +60,24 @@ h1.title-app-name {
     width: 80%;
     margin: 0 auto;
     border-radius: 10px;
-    //background-color: transparent !important;
     //background-color: var(--menu-active-color) !important;
 }
 
-.mat-drawer-container {
-    //background-color: transparent !important;
-}
-
-#mat-item-folio:hover {
+#ed-item-folio:hover {
     background-color: transparent !important;
 }
+
+//*******************FIN ESTILOS MENU LATERAL
+
+//TOOLBAR
+.ed-toolbar {
+    min-height: 70px;
+    z-index: 50;
+    //height: 3rem;
+}
+
+.ed-header-contenido {
+    background-color: white;
+    border: 1px solid #efefef;
+}
+

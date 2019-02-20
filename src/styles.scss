@@ -61,8 +61,5 @@ $ed-app-warn: mat-palette($mat-red);
 $ed-app-theme: mat-light-theme($ed-app-primary, $ed-app-accent, $ed-app-warn);
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
-// that you are using. 
+// that you are using.
 @include angular-material-theme($ed-app-theme);
-.mat-row:hover {
-    background-color: var(--table-hover-color);
-}

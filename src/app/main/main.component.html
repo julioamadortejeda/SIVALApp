@@ -1,19 +1,18 @@
 <div class="main-container" [class.main-is-mobile]="mobileQuery.matches">
-    <mat-toolbar color="primary" class="toolbar mat-elevation-z4">
+    <mat-toolbar color="primary" class="ed-toolbar toolbar mat-elevation-z3">
         <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
         <img width="50px" src="../../assets/ed-logo.png" />
-        <!-- <h1 class="title-app-name">Enlace Digital</h1> -->
     </mat-toolbar>
     <mat-sidenav-container class="sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 64 : 0">
-        <mat-sidenav opened #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches" fixedTopGap="64" class="menu mat-elevation-z4">
-            <mat-nav-list>
-                <!-- <h3 mat-subheader>Buscar Folio:</h3> -->
-                <mat-list-item id="mat-item-folio" class="mb-3" [disableRipple]="true">
+        <mat-sidenav class="ed-menu mat-elevation-z4" opened #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
+            [fixedInViewport]="mobileQuery.matches" fixedTopGap="64">
+            <mat-nav-list class="ed-menu-list">
+                <mat-list-item id="ed-item-folio" class="mb-3" [disableRipple]="true">
                     <app-buscarfolio style="width: 100%">
                     </app-buscarfolio>
                 </mat-list-item>
-                <mat-divider></mat-divider>
-                <h3 mat-subheader>Menu</h3>
+                <mat-divider style="color: #99abb4"></mat-divider>
+                <h3 mat-subheader style="color: #99abb4">Menu</h3>
                 <mat-list-item routerLink="/DoblePlay" routerLinkActive="menu-item-active">
                     <mat-icon mat-list-icon>done_all</mat-icon>
                     <p mat-line> Doble Play </p>
@@ -33,11 +32,8 @@
             </mat-nav-list>
         </mat-sidenav>
         <mat-sidenav-content>
-                <mat-toolbar class="bg-white">
-                </mat-toolbar>
-            <div  class="px-4 py-4">
+                <mat-toolbar class="ed-header-contenido mat-elevation-z1"></mat-toolbar>
                 <router-outlet></router-outlet>
-            </div>
         </mat-sidenav-content>
     </mat-sidenav-container>
 </div>
