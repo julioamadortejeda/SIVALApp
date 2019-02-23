@@ -1,3 +1,4 @@
+import { AuthGuard } from './guards/auth-guard.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -30,14 +31,14 @@ import { MainComponent } from './main/main.component';
 import { BuscarfolioComponent } from './buscarfolio/buscarfolio.component';
 
 const appRoutes: Routes = [
-    { path: 'DoblePlay', component: FoliosDPComponent },
+    { path: 'DoblePlay', component: FoliosDPComponent, canActivate: [AuthGuard] },
     { path: 'Activaciones', component: ActivacionesComponent },
     {
         path: '',
         component: FoliosDPComponent,
-        pathMatch: 'full'
+        pathMatch: 'full',
     },
-    { path: '**', component: FoliosDPComponent }
+    { path: '**', component: FoliosDPComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({
@@ -72,7 +73,7 @@ const appRoutes: Routes = [
         MatNativeDateModule,
         ReactiveFormsModule,
     ],
-    providers: [],
+    providers: [AuthGuard],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
