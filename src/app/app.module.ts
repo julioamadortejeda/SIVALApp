@@ -29,49 +29,20 @@ import { FoliosDPComponent } from './dobleplay/components/folios-dp/folios-dp.co
 import { ActivacionesComponent } from './activaciones/components/activaciones/activaciones.component';
 import { MainComponent } from './main/main.component';
 import { BuscarfolioComponent } from './buscarfolio/buscarfolio.component';
-
-const appRoutes: Routes = [
-    { path: 'DoblePlay', component: FoliosDPComponent, canActivate: [AuthGuard] },
-    { path: 'Activaciones', component: ActivacionesComponent },
-    {
-        path: '',
-        component: FoliosDPComponent,
-        pathMatch: 'full',
-    },
-    { path: '**', component: FoliosDPComponent, canActivate: [AuthGuard] },
-];
+import { LoginComponent } from './login/login/login.component';
+import { LoginModule } from './login/login.module';
+import { MainModule } from './main/main.module';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
     declarations: [
         AppComponent,
-        LayoutComponent,
-        MainComponent,
-        BuscarfolioComponent
     ],
     imports: [
         BrowserModule,
         BrowserAnimationsModule,
-        MatButtonModule,
-        MatCheckboxModule,
-        MatSidenavModule,
-        MatRadioModule,
-        MatToolbarModule,
-        MatListModule,
-        MatIconModule,
-        MatInputModule,
-        DobleplayModule,
-        MatCardModule,
-        ActivacionesModule,
-        RouterModule.forRoot(
-            appRoutes,
-            { enableTracing: false } // <-- debugging purposes only
-        ),
-        BrowserModule,
-        BrowserAnimationsModule,
-        FormsModule,
-        HttpClientModule,
-        MatNativeDateModule,
-        ReactiveFormsModule,
+        AppRoutingModule,
+        LoginModule
     ],
     providers: [AuthGuard],
     bootstrap: [AppComponent]
