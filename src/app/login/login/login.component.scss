@@ -1,0 +1,30 @@
+$break-small: 768px;
+.ed-login {
+    margin: 7% auto;
+    width: 360px;
+    @media screen and (max-width: $break-small) {
+        width: 90%;
+        float: none;
+    }
+}
+
+.mat-card-title {
+    font-size: 16px;
+}
+
+.mat-form-field {
+    display: block !important;
+}
+
+.ed-login-form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10% !important;
+    margin-bottom: 10% !important;
+}
+
+.ed-login-form>* {
+    width: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+}

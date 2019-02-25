@@ -1,3 +1,34 @@
-<p>
-  login works!
-</p>
+<!-- <mat-card class="col-6 offset-3" style="justify-content:center">Simple card</mat-card> -->
+<mat-toolbar color="primary" class="mat-elevation-z3" style="display: flex;">
+    Enlace Digital
+</mat-toolbar>
+<mat-card class="ed-login">
+    <mat-card-header>
+        <mat-card-title>Login</mat-card-title>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+    <mat-card-content>
+        <div class="ed-login-form">
+            <form [formGroup]="edLoginForm" id="edLoginForm" (ngSubmit)="login()">
+                <mat-form-field appearance="legacy">
+                    <mat-label>Usuario</mat-label>
+                    <input formControlName="usuario" matInput placeholder="Usuario">
+                    <mat-icon matSuffix>user</mat-icon>
+                    <mat-error *ngIf="edLoginForm.invalid">{{obtenerErrorUsuario('usuario')}}</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="legacy" class="mt-3">
+                    <mat-label>Contraseña</mat-label>
+                    <input formControlName="password" matInput type="password" placeholder="Contraseña">
+                    <mat-icon matSuffix>user</mat-icon>
+                    <mat-error *ngIf="edLoginForm.invalid">{{obtenerErrorUsuario('password')}}</mat-error>
+                </mat-form-field>
+            </form>
+            <mat-error *ngIf="error" class="mt-2">{{error}}</mat-error>
+        </div>
+    </mat-card-content>
+    <mat-divider></mat-divider>
+    <mat-card-actions align="end">
+        <mat-spinner-button (click)="login()" [options]="btnOpts" form="edLoginForm"></mat-spinner-button>
+        <!-- <mat-spinner-button [options]="btnOpts" form="edLoginForm"  color="primary">Iniciar</mat-spinner-button> -->
+    </mat-card-actions>
+</mat-card>
