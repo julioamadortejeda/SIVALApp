@@ -10,6 +10,10 @@ const routes: Routes = [
     component: MainComponent,
     children: [
       {
+        path: '',
+        redirectTo: 'dobleplay'
+      },
+      {
           path: 'dobleplay',
           component: FoliosDPComponent
           // loadChildren: 'src/app/dobleplay/dobleplay.module#DobleplayModule'

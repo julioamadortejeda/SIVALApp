@@ -1,37 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatTableDataSource, MatPaginator } from '@angular/material';
-
-export interface PeriodicElement {
-    name: string;
-    position: number;
-    weight: number;
-    symbol: string;
-}
-
-const ELEMENT_DATA: PeriodicElement[] = [
-    { position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H' },
-    { position: 2, name: 'Helium', weight: 4.0026, symbol: 'He' },
-    { position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li' },
-    { position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be' },
-    { position: 5, name: 'Boron', weight: 10.811, symbol: 'B' },
-    { position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C' },
-    { position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N' },
-    { position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O' },
-    { position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F' },
-    { position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne' },
-    { position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H' },
-    { position: 2, name: 'Helium', weight: 4.0026, symbol: 'He' },
-    { position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li' },
-    { position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be' },
-    { position: 5, name: 'Boron', weight: 10.811, symbol: 'B' },
-    { position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C' },
-    { position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N' },
-    { position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O' },
-    { position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F' },
-    { position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne' },
-];
-
-
+import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
+import { DobleplayService } from 'src/app/services/dobleplay/dobleplay.service';
+import { Folio } from 'src/app/models/folio';
 
 @Component({
     selector: 'app-folios-dp',
@@ -39,11 +9,29 @@ const ELEMENT_DATA: PeriodicElement[] = [
     styleUrls: ['./folios-dp.component.scss']
 })
 export class FoliosDPComponent implements OnInit {
-    displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-    dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
+
+    public folios: Folio[];
+    isLoading = true;
+    isRateLimit = false;
+    resultLength = 0;
     @ViewChild(MatPaginator) paginator: MatPaginator;
+    @ViewChild(MatSort) sort: MatSort;
+
+
+    constructor(private dpService: DobleplayService) { }
+
+    displayedColumns: string[] = ['fechaCaptura', 'promotor', 'folio', 'os', 'telefono', 'estatus', 'campana', 'area', 'paquete'];
+    dataSource = new MatTableDataSource(this.folios);
+
     ngOnInit() {
-        this.dataSource.paginator = this.paginator;
+        this.dpService.getFolios().subscribe(data => {
+            this.folios = data;
+            // console.log(this.folios);
+            this.isLoading = false;
+            this.isRateLimit = false;
+            this.resultLength = this.folios.length;
+            this.dataSource.paginator = this.paginator;
+        });
     }
 
     applyFilter(filterValue: string) {

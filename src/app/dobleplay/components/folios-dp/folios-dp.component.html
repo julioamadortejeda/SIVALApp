@@ -1,40 +1,60 @@
-.<div class="container-fluid p-4">
+.<div >
     <!-- <p class="mat-h2"> Doble Play</p> -->
     <div class="mat-elevation-z8 p-3 bg-white">
         <mat-form-field>
             <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filtrar">
         </mat-form-field>
-        <mat-table [dataSource]="dataSource" class="tableHover">
+        <mat-table id="ed-dpTabla" [dataSource]="folios" class="tableHover">
 
-            <!-- Position Column -->
-            <ng-container matColumnDef="position">
-                <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+            <ng-container matColumnDef="fechaCaptura">
+                <mat-header-cell *matHeaderCellDef> Fecha Captura </mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.fechaCaptura | date:'d MMM yyyy'}} </mat-cell>
             </ng-container>
 
-            <!-- Name Column -->
-            <ng-container matColumnDef="name">
-                <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+            <ng-container matColumnDef="promotor">
+                <mat-header-cell *matHeaderCellDef> Promotor </mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.empleado.nombre}} </mat-cell>
             </ng-container>
 
-            <!-- Weight Column -->
-            <ng-container matColumnDef="weight">
-                <mat-header-cell *matHeaderCellDef> Weight </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.weight}} </mat-cell>
+            <ng-container matColumnDef="folio">
+                <mat-header-cell *matHeaderCellDef> Folio </mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.folio}} </mat-cell>
             </ng-container>
 
-            <!-- Symbol Column -->
-            <ng-container matColumnDef="symbol">
-                <mat-header-cell *matHeaderCellDef> Symbol </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
+            <ng-container matColumnDef="os">
+                <mat-header-cell *matHeaderCellDef> OS </mat-header-cell>
+                <mat-cell *matCellDef="let row"> 7316564 </mat-cell>
             </ng-container>
 
+            <ng-container matColumnDef="telefono">
+                <mat-header-cell *matHeaderCellDef> Telefono </mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.celular}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="estatus">
+                <mat-header-cell *matHeaderCellDef> Estatus </mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.estatusSIAC.nombre}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="campana">
+                <mat-header-cell *matHeaderCellDef> Campana </mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.campana.nombre}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="area">
+                <mat-header-cell *matHeaderCellDef> Area </mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.area.nombre}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="paquete">
+                <mat-header-cell *matHeaderCellDef> Paquete </mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.paquete.nombre}} </mat-cell>
+            </ng-container>
             <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
             <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
 
         </mat-table>
-        <mat-paginator [pageSizeOptions]="[10, 50, 100, 200]" showFirstLastButtons></mat-paginator>
+        <mat-paginator [length]="resultLength" [pageSizeOptions]="[10, 50, 100, 200]" showFirstLastButtons></mat-paginator>
     </div>
 </div>
 
